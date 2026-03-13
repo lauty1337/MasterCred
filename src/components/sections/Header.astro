@@ -3,9 +3,9 @@ import { Image } from 'astro:assets';
 import logo from '../../assets/images/logo.webp';
 ---
 
-<header class="fixed z-50 w-full mx-auto p-2.5 border-b border-black/20 backdrop-blur-xl bg-white/50 ">
+<header class="fixed z-50 w-full mx-auto p-2.5 px-1 md:px-3 border-b border-black/20 backdrop-blur-xl bg-white/50 ">
 
-   <div class="max-w-5xl mx-auto flex items-center justify-between">
+   <div class="max-w-6xl mx-auto flex items-center justify-between">
             <a href="/" class="flex items-center  gap-x-2 hover:scale-105 transition-all duration-300">
                 <Image src={logo} alt="MasterCred" class="size-4" />
                 <span class="text-md font-medium uppercase hidden md:block">MasterCred</span>

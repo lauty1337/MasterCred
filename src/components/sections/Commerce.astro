@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import CommerceItem from '../CommerceItem.astro';
+
+const commerces = await getCollection('commerce');
+---
+
+
+<section class="py-20 bg-gray-50">
+       <div class="max-w-6xl mx-auto px-1 md:px-3">
+            <span class="text-sm text-gray-500/50 ">/Comercios</span>
+            <h2 class="text-2xl md:text-3xl font-bold italic uppercase mt-2">
+                Compra en <span class="text-blue-600">estos comercios:</span>
+            </h2>
+            <p class="text-sm md:text-base text-gray-500">
+                Locales adheridos donde podés pagar tus compras en cuotas.
+            </p>
+            <ul class="grid grid-cols-3 md:grid-cols-5 mt-10">
+                {commerces.map((commerce: any) => (
+                    <CommerceItem commerce={commerce} />
+                ))}
+            </ul>
+       </div>
+</section>
