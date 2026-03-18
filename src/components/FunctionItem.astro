@@ -1,0 +1,31 @@
+---
+interface Props {
+    step: {
+        step: string;
+        label: string;
+        left: {
+            title: string;
+            description: string;
+            features: { title: string; description: string }[];
+        };
+        right: {
+            tagline: string;
+            title: string;
+            image: string;
+        };
+    };
+    index: number;
+}
+
+const { step, index } = Astro.props;
+---
+
+<div data-step-left={index} class="invisible">
+    <span>{step.step}</span>
+    <h3>{step.label}</h3>
+</div>
+
+<div data-step-right={index} class="invisible">
+    <span>{step.right.tagline}</span>
+    <h3>{step.right.title}</h3>
+</div>

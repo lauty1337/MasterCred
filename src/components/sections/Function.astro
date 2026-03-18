@@ -1,0 +1,78 @@
+---
+import FunctionItem from '../FunctionItem.astro';
+
+const steps = [
+    {
+        step: '01',
+        label: 'Comenzar proceso',
+
+        left: {
+            title: 'Transparencia y rapidez desde el primer contacto',
+            description: 'Nos pondremos en contacto contigo para brindarte toda la información necesaria sobre el proceso de financiación.',
+            features: [
+                {
+                    title: 'Transparencia y rapidez desde el primer contacto',
+                    description: 'Nos pondremos en contacto contigo para brindarte toda la información necesaria sobre el proceso de financiación.'
+                },
+                {
+                    title: 'Las maquinas en lo que hacemos',
+                    description: 'Despues de todo, las maquinas no hacen el trabajo, somos nosotros.'
+                },
+                {
+                    title: 'La mejor experiencia para vos',
+                    description: 'Te brindaremos la mejor experiencia posible para que puedas financiar tu compra sin complicaciones.'
+                },
+            ]
+        },
+        right: {
+            tagline: 'Rapidos. Maquinas. GOATS',
+            title: 'Paso 1: Contacto',
+            image: '',
+        },
+    },
+    {
+        step: '02',
+        label: 'Verificar documentación',
+        left: {
+            title: 'No te preocupes, nosotros nos encargamos de todo',
+            description: 'Nos pondremos en contacto contigo para brindarte toda la información necesaria sobre el proceso de financiación.',
+            features: [
+                {
+                    title: 'Documentación requerida',
+                    description: 'Te enviaremos un formulario para que completes con la documentación requerida.'
+                },
+                {
+                    title: 'Verificación de documentación',
+                    description: 'Nos pondremos en contacto contigo para brindarte toda la información necesaria sobre el proceso de financiación.'
+                },
+            ]
+        },
+        right: {
+            tagline: 'No te preocupes, nosotros nos encargamos de todo',
+            title: 'Paso 2: Verificación de documentación',
+            image: '',
+        },
+    }
+]
+---
+
+
+
+
+
+<section id="function" class="bg-gray-50 py-10 md:py-20">
+    <div class="container">
+        <span class="text-sm text-blue-600/60 uppercase font-semibold mb-3"> Funcionamiento</span>
+        <h2 class="text-2xl md:text-3xl font-bold uppercase mt-2">
+            Como funciona MasterCred
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+            {steps.map((step, i) => (
+                <FunctionItem step={step} index={i} />
+            ))}
+        </div>
+    </div>
+    <script>
+        import '../../scripts/animations/function.js';
+    </script>
+</section>
