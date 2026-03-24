@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import logo from '../assets/images/logo.webp';
 interface Props {
     step: {
         step: string;
@@ -11,7 +13,6 @@ interface Props {
         right: {
             tagline: string;
             title: string;
-            image: string;
         };
     };
     index: number;
@@ -20,12 +21,37 @@ interface Props {
 const { step, index } = Astro.props;
 ---
 
-<div data-step-left={index} class="invisible">
-    <span>{step.step}</span>
-    <h3>{step.label}</h3>
-</div>
+<div data-step={index} class:list={[
+    'invisible grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-8 items-start',
+    index > 0 && 'absolute inset-0',
+]}>
+    <div data-step-left={index} class="flex flex-col gap-y-3">
+        <div class="flex gap-x-4 items-center mb-3">
+            <span class="text-4xl text-blue-600/30 uppercase font-semibold">{step.step}</span>
+            <span class="w-10 h-1 bg-blue-600 rounded-full"></span>
+            <span class="text-sm md:text-base text-black/70 font-bold uppercase">{step.label}</span>
+        </div>
+        <h3 set:html={step.left.title} class="text-xl md:text-4xl font-semibold text-balance"></h3>
+        <p class="text-sm md:text-base leading-relaxed text-gray-600">
+            {step.left.description}
+        </p>
+        <ul class="flex flex-col gap-y-4 mt-4">
+            {step.left.features.map((feature) =>
+                <li class="flex gap-x-4">
+                    <span class="size-4 mt-1.5 shrink-0 bg-blue-600 shadow-lg shadow-blue-600/80 rounded-full"></span>
+                    <div>
+                        <h4 class="text-md md:text-lg font-bold text-black">{feature.title}</h4>
+                        <p class="text-xs md:text-sm text-gray-600">{feature.description}</p>
+                    </div>
+                </li>
+            )}
+        </ul>
+        <a href="/" class="text-sm md:text-base w-fit px-5 py-1.5 border border-blue-600/30 font-medium bg-blue-500 text-white hover:shadow-lg hover:font-semibold hover:shadow-blue-500/30 transition-all duration-200 mt-4">Iniciar mi solicitud</a>
+    </div>
 
-<div data-step-right={index} class="invisible">
-    <span>{step.right.tagline}</span>
-    <h3>{step.right.title}</h3>
+    <div data-step-right={index} class="flex relative overflow-hidden flex-col gap-y-2 p-6 justify-end  min-h-5/6 -rotate-3 rounded-lg shadow-lg shadow-black/80  bg-[#1d1c1c]">
+        <Image src={logo} alt="Logo de MasterCred" class="absolute -top-10 right-0 bottom-0 left-0 m-auto size-55 " />
+        <span data-step-right-tagline={index} class="text-blue-600 text-xl font-semibold uppercase">{step.right.tagline}</span>
+        <h3 data-step-right-title={index} class="text-2xl md:text-4xl font-semibold text-white/90">{step.right.title}</h3>
+    </div>
 </div>

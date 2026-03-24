@@ -11,8 +11,9 @@ import Footer from '../components/sections/Footer.astro';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/src/assets/images/logo.webp" />
-		<link rel="icon" href="/src/assets/images/logo.webp" />
 		<title>MasterCred</title>
+
+		<meta name="robots" content="index, follow"/>
 	</head>
 	<body class="font-sans ">
 		<Header />
@@ -20,8 +21,15 @@ import Footer from '../components/sections/Footer.astro';
 		    <slot />
 	    </main>
 		<Footer />
+
 	</body>
+	<script>
+	import { initLenis } from '../scripts/lenis.js'
+    initLenis()
+	</script>
 </html>
+
+
 
 <style is:global>
 	body {

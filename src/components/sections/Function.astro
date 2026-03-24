@@ -7,51 +7,79 @@ const steps = [
         label: 'Comenzar proceso',
 
         left: {
-            title: 'Transparencia y rapidez desde el primer contacto',
-            description: 'Nos pondremos en contacto contigo para brindarte toda la información necesaria sobre el proceso de financiación.',
+            title: 'Solicitá <span class="text-blue-600">tu crédito en minutos</span>, sin complicaciones.',
+            description: 'Completá el un formulario online y envia tu solicitud directamente por WhatsApp ',
             features: [
                 {
-                    title: 'Transparencia y rapidez desde el primer contacto',
-                    description: 'Nos pondremos en contacto contigo para brindarte toda la información necesaria sobre el proceso de financiación.'
+                    title: 'Formulario rapido',
+                    description: 'Completa tus datos en menos de 2 minutos desde cualquier dispositivo.'
                 },
                 {
-                    title: 'Las maquinas en lo que hacemos',
-                    description: 'Despues de todo, las maquinas no hacen el trabajo, somos nosotros.'
+                    title: 'Envio directo por WhatsApp',
+                    description: 'Tu solicitud llega de forma inmediata para comenzar el procedimiento.'
                 },
                 {
-                    title: 'La mejor experiencia para vos',
-                    description: 'Te brindaremos la mejor experiencia posible para que puedas financiar tu compra sin complicaciones.'
+                    title: 'Proceso 100% digital',
+                    description: 'Sin papeles, sin impresiones y sin moverte de tu casa'
                 },
             ]
         },
         right: {
-            tagline: 'Rapidos. Maquinas. GOATS',
-            title: 'Paso 1: Contacto',
-            image: '',
+            tagline: 'Rapidos. Simple. Online', 
+            title: 'Paso 1: Solicita tu crédito',
         },
     },
     {
         step: '02',
-        label: 'Verificar documentación',
+        label: 'Evaluación crediticia',
         left: {
-            title: 'No te preocupes, nosotros nos encargamos de todo',
-            description: 'Nos pondremos en contacto contigo para brindarte toda la información necesaria sobre el proceso de financiación.',
+            title: 'Analizamos tu solicitud en <span class="text-blue-600">tiempo real</span>.',
+            description: 'Evaluamos tu perfil crediticio de forma rapida y segura para determinar tu aprobación',
             features: [
                 {
-                    title: 'Documentación requerida',
-                    description: 'Te enviaremos un formulario para que completes con la documentación requerida.'
+                    title: 'Evaluación automática',
+                    description: 'Procesamos tu solicitud con criterios claros.'
                 },
                 {
-                    title: 'Verificación de documentación',
-                    description: 'Nos pondremos en contacto contigo para brindarte toda la información necesaria sobre el proceso de financiación.'
+                    title: 'Seguridad garantizada.',
+                    description: 'Tus datos estan protegidos mediante sistemas de validación confiables.'
+                },
+                {
+                    title: 'Respuesta con tiempo real.',
+                    description: 'Recibirás una respuesta dentro de 48 horas para que puedas tomar decisiones inmediatas.'
                 },
             ]
         },
         right: {
-            tagline: 'No te preocupes, nosotros nos encargamos de todo',
-            title: 'Paso 2: Verificación de documentación',
-            image: '',
+            tagline: 'Rapido. Seguro. Confiable',
+            title: 'Paso 2: Evaluamos tu solicitud',
         },
+    },
+    {
+        step: "03",
+        label: "Confirmación",
+        left: {
+            title: "Recibi tu aprobación y <span class='text-blue-600'>comienza a comprar</span>.",
+            description: "Te confirmamos por WhatsApp si tu crédito fue aprobado y ya podes usarlo en comercios adheridos a MasterCred",
+            features: [
+                {
+                    title: "Notificación inmediata",
+                    description: "Te informamos por WhatsApp cuando tu crédito está aprobado."
+                },
+                {
+                    title: "Compra en cuotas.",
+                    description: "Accede a financiamiento en múltiples comercios adheridos."
+                },
+                {
+                    title: "Inicio claro del plan.",
+                    description: "La primera cuota se abona al comenzar tu financiación.",
+                },
+            ]
+        },
+        right: {
+            tagline: "Aprobado. Agil. Accesible.",
+            title: "Paso 3: Usa tu crédito",
+        }
     }
 ]
 ---
@@ -60,19 +88,23 @@ const steps = [
 
 
 
-<section id="function" class="bg-gray-50 py-10 md:py-20">
-    <div class="container">
-        <span class="text-sm text-blue-600/60 uppercase font-semibold mb-3"> Funcionamiento</span>
+<section id="function" class="bg-gray-50 relative overflow-hidden py-10 md:py-20">
+    <div class="container-section">
+        <span class="text-sm text-blue-600/60 font-semibold mb-3"> Funcionamiento</span>
         <h2 class="text-2xl md:text-3xl font-bold uppercase mt-2">
             Como funciona MasterCred
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+        <div class="relative mt-6">
             {steps.map((step, i) => (
                 <FunctionItem step={step} index={i} />
             ))}
         </div>
     </div>
-    <script>
-        import '../../scripts/animations/function.js';
-    </script>
+    <div class="absolute bottom-7 inset-x-0 justify-center items-center opacity-5 translate-y-1/2 pointer-events-none hidden lg:flex">
+        <span class="text-[8rem] font-black uppercase">Pasos</span>
+    </div>
 </section>
+
+<script>
+import '../../scripts/animations/function.js';
+</script>

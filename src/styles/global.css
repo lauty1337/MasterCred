@@ -3,8 +3,9 @@
 
 @theme {
     --breakpoint-xs: 390px;
+    --color-label: #1965f3;
 }
 
-.container {
+.container-section {
     @apply max-w-6xl mx-auto px-4 md:px-3;
 }
