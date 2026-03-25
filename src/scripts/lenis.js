@@ -18,6 +18,8 @@ export function initLenis() {
                 lenis.raf(time * 1000);
             });
             gsap.ticker.lagSmoothing(0);
+
+            ScrollTrigger.refresh();
         });
     };
 

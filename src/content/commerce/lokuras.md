@@ -1,6 +1,6 @@
 ---
-title: Lokura´s
-address: Av. Republica 876 Bis
+title: Lokura's
+address: Av. República 876 Bis
 category: Indumentaria
 image: ../../assets/images/commerce/lokuras.jpg
 ---
