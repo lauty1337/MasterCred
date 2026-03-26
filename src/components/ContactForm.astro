@@ -45,7 +45,7 @@ import File from '../assets/svgs/File.svg';
         maxlength="8"
         minlength="8"
         inputmode="numeric"
-        oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 11)"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 8)"
         required
         >
     </label>
@@ -62,8 +62,8 @@ import File from '../assets/svgs/File.svg';
         </p>
 </form>
 
-<div class="flex flex-col order-first md:order-last">
-    <div class="relative flex flex-col overflow-hidden gap-y-3 bg-gray-100 p-6 md:p-15 rounded-lg border-l-4 border-blue-600">
+<div class="flex flex-col order-first md:order-last gap-y-10">
+    <div class="relative flex flex-col overflow-hidden gap-y-3 bg-gray-200 p-6 md:p-10 rounded-lg border-l-4 border-blue-600">
         <Cash class="absolute -top-5 -right-3 md:top-20 md:-right-5 text-gray-300 size-50 md:size-50"/>
         <span class="block text-4xl md:text-6xl text-label font-semibold">+30</span>
         <h3 class="z-10 md:text-xl font-semibold">  
@@ -71,27 +71,54 @@ import File from '../assets/svgs/File.svg';
         </h3>
         <p class="text-gray-600 text-xs z-10 md:text-base">Mas de 500 clientes confian en nosotros</p>
     </div>
-    <ul class="flex flex-col gap-y-2 ">
-        <li class="flex items-center gap-x-2">
-            <Security />
-            <div>
-                <h4 class="text-sm font-medium">Datos protegidos</h4>
+    <ul class="flex flex-col gap-y-5 ">
+        <li class="flex items-center gap-x-5">
+            <div class="flex items-center justify-center bg-gray-200 rounded-md p-2">
+                <Security class="text-blue-600" />
+            </div>
+            <div class="flex flex-col gap-y-1">
+                <h4 class="text-sm font-semibold">Datos protegidos</h4>
                 <p class="text-gray-600 text-xs">Tu informacion es confidencial y se utiliza para tu solicitud</p>
             </div>
         </li>
-        <li class="flex items-center gap-x-2">
-            <Clock />
-            <div>
-                <h4 class="text-sm font-medium">Tiempo real</h4>
+        <li class="flex items-center gap-x-5">
+            <div class="flex items-center justify-center bg-gray-200 rounded-md p-2">
+                <Clock class="text-blue-600" />
+            </div>
+            <div class="flex flex-col gap-y-1">
+                <h4 class="text-sm font-semibold">Tiempo real</h4>
                 <p class="text-gray-600 text-xs">Tu solicitud es evaluada en tiempo real</p>
             </div>
         </li>
-        <li class="flex items-center gap-x-2">
-            <File />
-            <div>
-                <h4 class="text-sm font-medium">Documentos</h4>
+        <li class="flex items-center gap-x-5">
+            <div class="flex items-center justify-center bg-gray-200 rounded-md p-2">
+                <File class="text-blue-600" />
+            </div>
+            <div class="flex flex-col gap-y-1">
+                <h4 class="text-sm font-semibold">Documentos</h4>
                 <p class="text-gray-600 text-xs">Tu solicitud es evaluada en tiempo real</p>
             </div>
         </li>
     </ul>
 </div>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const address = document.getElementById("address").value;
+        const dni = document.getElementById("dni").value;
+        const phone = "5492364373183"; 
+
+        const message = `Hola! Soy ${name} y quiero solicitar un credito en MasterCred.\nDomicilio: ${address}\nDNI: ${dni}`;
+        const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, "_blank");
+
+        // Vuelve todos los inputs al estado inicial (vacíos)
+        form.reset();
+    });
+});
+</script>
