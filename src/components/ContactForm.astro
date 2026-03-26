@@ -1,6 +1,68 @@
-<div>
+---
+import Message from '../assets/svgs/Message.svg';
+import Security from '../assets/svgs/Security.svg';
+import Cash from '../assets/svgs/Cash.svg';
+---
 
-</div>
-<div>
-    
+
+<form id="contact-form" class="flex flex-col gap-y-5 bg-white p-6 rounded-lg border border-black/5">
+
+    <label for="name" class="flex flex-col gap-y-2">
+        <span class="text-xs md:text-sm text-label/50">Nombre completo</span>
+        <input 
+        type="text" 
+        placeholder="Juan Perez" 
+        id="name" 
+        class="border text-sm bg-gray-100 border-black/10 p-2 text-black/80 rounded-sm focus:outline-none focus:ring-1 focus:ring-label transition-all duration-300"
+        required
+        >
+    </label>
+
+    <label for="address" class="flex flex-col gap-y-2">
+        <span class="text-xs md:text-sm text-label/50">Domicilio</span>
+        <input 
+        type="text" 
+        placeholder="Calle Francia 123" 
+        id="address" 
+        class="border text-sm bg-gray-100 border-black/10 p-2 text-black/80 rounded-sm focus:outline-none focus:ring-1 focus:ring-label transition-all duration-300"
+        required
+        >
+    </label>
+
+    <label for="dni" class="flex flex-col gap-y-2">
+        <span class="text-xs md:text-sm text-label/50">DNI</span>
+        <input 
+        type="text" 
+        placeholder="90.132.845" 
+        id="dni" 
+        class="border text-sm bg-gray-100 border-black/10 p-2 text-black/80 rounded-sm focus:outline-none focus:ring-1 focus:ring-label transition-all duration-300"
+        maxlength="8"
+        minlength="8"
+        inputmode="numeric"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 11)"
+        required
+        >
+    </label>
+    <button 
+    type="submit"
+    form="contact-form"
+    class="flex items-center justify-center gap-x-4 mt-5 button-gradient-flow px-4 py-2 rounded-sm cursor-pointer">
+        <Message />
+        <span class="text-sm font-medium">Enviar mensaje</span>
+    </button>
+        <p class="text-xs text-gray-600 flex items-center gap-x-2">
+        <Security class="size-4" />
+            Tu información está protegida
+        </p>
+</form>
+
+<div class="flex flex-col">
+    <div class="relative flex flex-col overflow-hidden gap-y-3 bg-gray-100 p-6 md:p-15 rounded-lg border-l-4 border-blue-600">
+        <Cash class="absolute -top-5 -right-3 md:top-20 md:-right-5 text-gray-300 size-50 md:size-50"/>
+        <span class="block text-4xl md:text-6xl text-label font-semibold">+30</span>
+        <h3 class="z-10 md:text-xl font-semibold">  
+            Prestamos otorgados este mes
+        </h3>
+        <p class="text-gray-600 text-xs z-10 md:text-base">Actualizado en tiempo real y el mas confiable</p>
+    </div>
 </div>
