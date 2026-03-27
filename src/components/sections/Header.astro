@@ -12,7 +12,7 @@ const navLinks = [
 <header id="header" class="invisible fixed z-50 w-full mx-auto p-2.5 border-b border-black/20 backdrop-blur-xl bg-white/70">
 	<div class="container-section flex items-center justify-between">
 		<a href="#hero" data-header-logo class="flex items-center gap-x-2">
-			<Image src={logo} alt="Logo de MasterCred" title="Logo de MasterCred" class="size-4 object-contain" />
+			<Image src={logo} alt="Logo de MasterCred" title="Logo de MasterCred" class="size-8 md:size-6  " />
 			<span class="text-md font-medium text-gray-600 uppercase hidden md:block">MasterCred</span>
 		</a>
 
@@ -51,11 +51,10 @@ const navLinks = [
 		</div>
 	</div>
 </header>
-
 <!-- Panel FUERA del header para que no herede backdrop-blur ni stacking context -->
 <div
 	id="panel-menu-movil"
-	class="group fixed inset-0 z-[60] md:hidden opacity-0 pointer-events-none transition-opacity duration-300 [&.is-open]:opacity-100 [&.is-open]:pointer-events-auto"
+	class="group fixed inset-0 z-60 md:hidden opacity-0 pointer-events-none transition-opacity duration-300 [&.is-open]:opacity-100 [&.is-open]:pointer-events-auto"
 	aria-hidden="true"
 	data-mobile-menu
 >
