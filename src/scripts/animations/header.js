@@ -1,21 +1,16 @@
 import gsap from 'gsap';
 
-const header = document.getElementById('header');
-const itemLogo = document.querySelector('[data-header-logo]');
-const itemsNav = document.querySelectorAll('[data-header-item]');
-const itemCta = document.querySelector('[data-header-cta]');
-
 const headerTl = gsap.timeline({
 	defaults: {
-		ease: 'back.out(3)',
+		ease: 'back.out(3)', autoAlpha: 0,
 	},
 });
 
 headerTl
-	.from(header, { y: -40, autoAlpha: 0, duration: 0.45 })
-	.from(itemLogo, { y: -10, autoAlpha: 0, duration: 0.3 })
-	.from(itemsNav, { y: -10, autoAlpha: 0, duration: 0.35, stagger: 0.2, clearProps: 'transform' })
-	.from(itemCta, { y: -10, autoAlpha: 0, duration: 0.4 });
+	.from('#header', { y: -40, duration: 0.45 })
+	.from('[data-header-logo]', { y: -10, duration: 0.3 })
+	.from('[data-header-item]', { y: -10, duration: 0.35, stagger: 0.2, clearProps: 'transform' })
+	.from('[data-header-cta]', { y: -10, duration: 0.4 });
 
 /* ——— Menú móvil (hamburguesa) ——— */
 

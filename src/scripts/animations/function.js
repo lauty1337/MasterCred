@@ -5,8 +5,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const sectionFunction = document.getElementById('function');
 
-
-
 // Seteo inicial
 gsap.set('[data-step="0"]', { autoAlpha: 1 });
 gsap.set('[data-step-left="1"], [data-step-left="2"]', { autoAlpha: 0, x: -60 });
